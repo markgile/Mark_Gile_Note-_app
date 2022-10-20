@@ -5,7 +5,7 @@ const add = function(note=[], oldNote) {
 
     finalNote.push(note)
 
-    let objecNote = JSON.stringify(finalNote)
+    let objectNote = JSON.stringify(finalNote)
 
     fs.writeFileSync('note.txt', objectNote)
 }

@@ -3,6 +3,7 @@ const read = require('./read')
 const write = require('./write')
 const cmd = process.argv
 const del = require ('./del')
+const update = require('./update')
 
 // get user input
 const data = process.argv
@@ -36,6 +37,17 @@ if(data[2] === 'delete'){
     let oldNote = read()
     let del = require('./del')
     del(id, oldNote)
+
+    console.log(read());
+}
+if(data[2] === 'update') {
+    let id = {
+        id: data[3],
+        title: data[4],
+        body: data[5],
+    }
+    let oldNote = read()
+    update(id, oldNote)
 
     console.log(read());
 }
